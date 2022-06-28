@@ -12,7 +12,7 @@
  * 
  */
 
-
+// creating teamMembers array
 const teamMembers = [
    {
       name: 'Wayne Barrett',
@@ -47,8 +47,23 @@ const teamMembers = [
 ];
 
 
+// Printing in console Keys Values 
 for (let i=0; i<teamMembers.length; i++) {
    for (let key in teamMembers[i]) {
       console.log(`${key}: ${teamMembers[i][key]}`)
    }
+}
+
+
+// Printing in DOM array objetcs
+const membersList = document.getElementById('members-list');
+
+for (let i=0; i<teamMembers.length; i++) {
+
+   for (let key in teamMembers[i]) {
+      membersList.innerHTML += `
+                              ${key}
+                              ${teamMembers[i][key]}`;
+   }
+
 }
