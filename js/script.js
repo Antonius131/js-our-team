@@ -47,23 +47,49 @@ const teamMembers = [
 ];
 
 
+
 // Printing in console Keys Values 
-for (let i=0; i<teamMembers.length; i++) {
-   for (let key in teamMembers[i]) {
-      console.log(`${key}: ${teamMembers[i][key]}`)
-   }
-}
+
+// for (let i=0; i<teamMembers.length; i++) {
+//    for (let key in teamMembers[i]) {
+//       console.log(`${key}: ${teamMembers[i][key]}`)
+//    }
+// }
+
 
 
 // Printing in DOM array objetcs
-const membersList = document.getElementById('members-list');
 
-for (let i=0; i<teamMembers.length; i++) {
+// const membersList = document.getElementById('members-list');
+
+// for (let i=0; i<teamMembers.length; i++) {
+
+//    for (let key in teamMembers[i]) {
+//       membersList.innerHTML += `
+//                               ${key}
+//                               ${teamMembers[i][key]}`;
+//    }
+
+// }
+
+
+const cardWrapper = document.querySelector('.card-wrapper');
+
+let i = 0;
+while (i<teamMembers.length) {
 
    for (let key in teamMembers[i]) {
-      membersList.innerHTML += `
-                              ${key}
-                              ${teamMembers[i][key]}`;
+      cardWrapper.innerHTML +=  `<div class="col-6 p-2">
+                                    <div class="card p-3">
+                                       <img src="${teamMembers[i].image}" alt="member-img" class="card-img-top mb-2">
+                                       <h4 class="card-title">${teamMembers[i].name}</h4>
+                                       <pre class="card-subtitle">${teamMembers[i].role}</pre>
+                                    </div>
+                                 </div>`;
    }
+
+   console.log(teamMembers[i]);
+   i++
+
 
 }
