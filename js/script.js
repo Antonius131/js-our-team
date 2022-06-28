@@ -78,18 +78,14 @@ const cardWrapper = document.querySelector('.card-wrapper');
 let i = 0;
 while (i<teamMembers.length) {
 
-   for (let key in teamMembers[i]) {
-      cardWrapper.innerHTML +=  `<div class="col-6 p-2">
+   cardWrapper.innerHTML +=  `<div class="col-6 p-2">
                                     <div class="card p-3">
                                        <img src="${teamMembers[i].image}" alt="member-img" class="card-img-top mb-2">
                                        <h4 class="card-title">${teamMembers[i].name}</h4>
                                        <pre class="card-subtitle">${teamMembers[i].role}</pre>
                                     </div>
                                  </div>`;
-   }
 
-   console.log(teamMembers[i]);
    i++
-
 
 }
